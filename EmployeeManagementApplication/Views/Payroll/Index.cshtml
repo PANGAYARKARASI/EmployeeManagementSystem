@@ -1,0 +1,73 @@
+﻿@model IEnumerable<EmployeeLibrary.Model.Payroll>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<br />
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-primary me-2" asp-area="" asp-action="Create">Add Payroll</a>
+    <button type="button" class="btn btn-primary me-2" onclick="location.href='@Url.Action("GetMonthAndUser", "Payroll")'">Payroll By Year</button>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PayrollId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserRole.User.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserRole.User.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserRole.Role.RoleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PayrollId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserRole.User.FirstName)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserRole.User.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserRole.Role.RoleName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PayrollId }, new { @class = "btn btn-sm btn-outline-primary me-2", title = "Edit" })
+                    <img src="~/Images/icons8-edit.gif" alt="Edit" style="width: 20px; height: 20px;">
+                    @Html.ActionLink("Details", "Details", new { id = item.PayrollId }, new { @class = "btn btn-sm btn-outline-info me-2", title = "Details" })
+                    <img src="~/Images/detailsgif.gif" alt="Details" style="width: 20px; height: 20px;">
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PayrollId }, new { @class = "btn btn-sm btn-outline-danger me-2", title = "Delete" })
+                    <img src="~/Images/delete.gif" alt="Delete" style="width: 20px; height: 20px;">
+                    @Html.ActionLink("GetByRole", "GetByRole", new { id = item.UserRole.RoleId }, new { @class = "btn btn-sm btn-outline-info me-2", title = "GetByRole" })
+                    <img src="~/Images/getbyrole.png" alt="GetByRole" style="width: 20px; height: 20px;">
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a class="btn btn-primary me-2" asp-area="" asp-controller="HomeIndexAdmin" asp-action="Index">Back to Home</a>

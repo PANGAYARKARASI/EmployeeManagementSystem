@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body
+        {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            margin-bottom: 60px;
+            background-image: url('../Images/bb.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container 
+        {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            max-width: 90%;
+            text-align: center;
+            margin: auto;
+        }
+
+        .login-container h2 
+        {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+            font-weight: 500;                
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] 
+        {
+             width: 100%;
+             padding: 12px 20px;
+             margin: 10px 0;
+             border: 1px solid #ccc;
+             border-radius: 5px;
+             box-sizing: border-box;
+             font-size: 16px;
+        }
+
+        .login-container input[type="submit"] {
+              background-color: #4caf50;
+              color: #fff;
+              padding: 15px;
+              margin: 10px 0;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              width: 100%;
+              transition: background-color 0.3s ease;
+              font-size: 16px;
+        }
+
+        .login-container input[type="submit"]:hover 
+        {
+             background-color: #45a049;
+        }
+
+        .sign-up {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .sign-up a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+        .error-message {
+            color: #ff0000; 
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .error-message ul {
+             list-style-type: none;
+             padding: 0;
+             margin: 0;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+    <div class="login-container">
+        <h2>Login</h2>
+        @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"] as string))
+        {
+            <p class="error-message ">@ViewData["ErrorMessage"]</p>
+        }
+
+        <form action="Verify" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger error-message"></div>
+            <input type="text" name="email" placeholder="abc@gmail.com" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+</form>
+        <div class="sign-up">
+            Don't have an account? <a href="Register">Sign Up</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

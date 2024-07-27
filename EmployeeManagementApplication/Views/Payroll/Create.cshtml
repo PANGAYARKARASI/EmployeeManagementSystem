@@ -1,0 +1,47 @@
+﻿@model EmployeeLibrary.Model.Payroll
+@using EmployeeLibrary.Model
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 style="padding-left:40%; padding-top:5%">Add Payroll</h1>
+
+<div class="container" style="width:50%; padding-top:5%">
+    <div class="card mt-4">
+        <div class="card-body">
+            <form asp-action="PostCreate" asp-controller="Payroll" method="post">
+              
+            <div class="mb-3">
+                    
+                    <div class="form-group">
+                        <label asp-for="Date" class="control-label"></label>
+                        <input asp-for="Date" class="form-control" required />
+                        <span asp-validation-for="Date" class="text-danger"></span>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label asp-for="UserRoleId" class="control-label"></label>
+                        @{
+                            // Retrieve categories from ViewData
+                            var users = ViewData["userroleid"] as List<UserRole>;
+                        }
+                        <select asp-for="UserRoleId" class="form-control" required>
+                            <option value="" disabled selected>Select a User </option>
+                            @foreach (var i in users)
+                            {
+                                <option value="@i.UserRoleId ">@i.User.FirstName @i.User.LastName - @i.Role.RoleName</option>
+
+                            }
+                        </select>
+                        <span asp-validation-for="UserRoleId" class="text-danger"></span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a class="btn btn-primary me-2" asp-area="" asp-action="Index">Back to Index</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+    

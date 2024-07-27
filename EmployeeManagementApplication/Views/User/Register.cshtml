@@ -1,0 +1,93 @@
+﻿@model EmployeeLibrary.Model.User
+@{
+    ViewData["Title"] = "Register";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin-bottom: 60px;
+            background-image: url('../Images/bb.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+       .container{
+           width:60%;
+           padding-right:50px;
+       }
+        .error-message {
+            color: #ff0000;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .form-title,
+        .form-label {
+            color: #fff; 
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="form-title">Register</h1>
+        <hr />
+        <form asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label for="firstname" class="form-label">First Name</label>
+                <input type="text" class="form-control" required id="firstname" name="firstname">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="lastname" class="form-label">Last Name</label>
+                <input type="text" class="form-control" required id="lastname" name="lastname">
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Id</label>
+                <input type="text" required class="form-control" id="email" name="email">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" required id="password" name="password">
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="joiningdate" class="form-label">Date Of Joining</label>
+                <input type="date" class="form-control" required id="joiningdate" name="joiningdate">
+                <span asp-validation-for="JoiningDate" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary me-2">Register</button>
+                <a class="btn btn-primary me-2" asp-area="" asp-action="Login">Back to Login</a>
+
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById("password").addEventListener("keyup", function () {
+            var password = document.getElementById("password").value;
+           
+        });
+    </script>
+
+</body>
+</html>
+
+

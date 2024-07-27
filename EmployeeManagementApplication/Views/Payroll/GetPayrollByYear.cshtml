@@ -1,0 +1,61 @@
+﻿@model IEnumerable<EmployeeLibrary.Model.Payroll>
+
+@{
+    ViewData["Title"] = "GetPayrollByYear";
+}
+<br />
+<h1>Get Payroll By Year</h1>
+@if(Model.Any())
+{
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PayrollId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserRole.User.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserRole.User.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PayrollId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserRole.User.FirstName)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserRole.User.LastName)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+    </table>
+}
+else
+{
+    <br />
+    <div style="font-size:40px"> No Records Found</div>
+}
+<br />
+<a class="btn btn-primary me-2" asp-area="" asp-action="Index">Back to Index</a>

@@ -1,0 +1,40 @@
+﻿@model EmployeeLibrary.Model.UserRole
+@using EmployeeLibrary.Model
+@{
+    ViewData["Title"] = "Edit";
+}
+<br />
+<h1>Edit</h1>
+
+<h4>UserRole</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RoleId" class="control-label"></label>
+                @{
+                    var roles = ViewData["roleid"] as List<Role>;
+                }
+                <select asp-for="RoleId" class="form-control custom-select">
+                    <option value="" disabled selected>Select a Role</option>
+                    @foreach (var i in roles)
+                    {
+                        <option value="@i.RoleId">@i.RoleName</option>
+
+                    }
+                </select>
+                <span asp-validation-for="RoleId" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a class="btn btn-primary me-2" asp-area="" asp-action="Index">Back to Index</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
