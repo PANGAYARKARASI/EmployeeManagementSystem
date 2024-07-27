@@ -1,0 +1,51 @@
+﻿@model IEnumerable<EmployeeLibrary.Model.UserRole>
+
+@{
+    ViewData["Title"] = "GetByRole";
+}
+<br />
+<h1>GetByRole</h1>
+@if(Model.Any())
+{
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.User.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Role.RoleName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.User.FirstName)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.LastName)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role.RoleName)
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>
+}
+else
+{
+    <br />
+    <div style="font-size:40px"> No Records Found</div>
+}
+<a class="btn btn-primary me-2" asp-area="" asp-action="Index">Back to Index</a>
+

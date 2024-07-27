@@ -1,0 +1,26 @@
+﻿@model EmployeeManagementApplication.Models.GetDate
+
+@{
+    ViewData["Title"] = "GetMonth";
+}
+<br />
+<h1>Get By Month</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="GetMonth">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label">Select a month</label>
+                <input asp-for="Date" class="form-control" required />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a class="btn btn-primary me-2" asp-area="" asp-action="Index">Back to Index</a>
+            </div>
+        </form>
+    </div>
+</div>
+

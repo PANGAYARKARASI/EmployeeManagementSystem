@@ -1,0 +1,65 @@
+﻿@model IEnumerable<EmployeeLibrary.Model.User>
+
+@{
+    ViewData["Title"] = "Index";
+    var username = ViewBag.userid;
+}
+<br />
+<h1>Index</h1>
+<p>
+    <a class="btn btn-primary me-2" asp-area="" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JoiningDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JoiningDate)
+                </td>
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.UserId }, new { @class = "btn btn-sm btn-outline-primary me-2", title = "Edit" })
+                    <img src="~/Images/icons8-edit.gif" alt="Edit" style="width: 20px; height: 20px;">
+                    @Html.ActionLink("Details", "Details", new { id = item.UserId }, new { @class = "btn btn-sm btn-outline-info me-2", title = "Details" })
+                    <img src="~/Images/detailsgif.gif" alt="Details" style="width: 20px; height: 20px;">
+                    @Html.ActionLink("Delete", "Delete", new { id = item.UserId }, new { @class = "btn btn-sm btn-outline-danger me-2", title = "Delete" })
+                    <img src="~/Images/delete.gif" alt="Delete" style="width: 20px; height: 20px;">
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a class="btn btn-primary me-2" asp-area="" asp-controller="HomeIndexAdmin" asp-action="Index">Back to Home</a>
+

@@ -1,0 +1,567 @@
+[
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.AttendanceController",
+    "Method": "GetAllAttendanceDetails",
+    "RelativePath": "api/Attendance",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.AttendanceController",
+    "Method": "Insert",
+    "RelativePath": "api/Attendance",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "attendance",
+        "Type": "EmployeeLibrary.Model.Attendance",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.AttendanceController",
+    "Method": "Update",
+    "RelativePath": "api/Attendance/{attendanceid}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "attendanceid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "attendance",
+        "Type": "EmployeeLibrary.Model.Attendance",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.AttendanceController",
+    "Method": "Delete",
+    "RelativePath": "api/Attendance/{attendanceid}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "attendanceid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.AttendanceController",
+    "Method": "GetOne",
+    "RelativePath": "api/Attendance/ByAttendanceId/{attendanceid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "attendanceid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.AttendanceController",
+    "Method": "GetByDate",
+    "RelativePath": "api/Attendance/ByDate/{date}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "date",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.AttendanceController",
+    "Method": "GetByMonth",
+    "RelativePath": "api/Attendance/ByMonth/{month}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "month",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.AttendanceController",
+    "Method": "GetByMonthAndUser",
+    "RelativePath": "api/Attendance/ByMonthAndUser/{month}/{userid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "month",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "userid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.AttendanceController",
+    "Method": "GetByUser",
+    "RelativePath": "api/Attendance/ByUserId/{userid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.PayrollController",
+    "Method": "GetAllPayrollDetails",
+    "RelativePath": "api/Payroll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.PayrollController",
+    "Method": "Insert",
+    "RelativePath": "api/Payroll/{date}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "date",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "payroll",
+        "Type": "EmployeeLibrary.Model.Payroll",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.PayrollController",
+    "Method": "Update",
+    "RelativePath": "api/Payroll/{payrollid}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "payrollid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "payroll",
+        "Type": "EmployeeLibrary.Model.Payroll",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.PayrollController",
+    "Method": "Delete",
+    "RelativePath": "api/Payroll/{payrollid}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "payrollid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.PayrollController",
+    "Method": "GetOne",
+    "RelativePath": "api/Payroll/ByPayrollId/{payrollid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "payrollid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.PayrollController",
+    "Method": "GetByRole",
+    "RelativePath": "api/Payroll/ByRoleId/{roleid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roleid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.PayrollController",
+    "Method": "GetByUser",
+    "RelativePath": "api/Payroll/ByUserId/{userid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.PayrollController",
+    "Method": "GetPayrollYear",
+    "RelativePath": "api/Payroll/grouped/{year}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "year",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.RoleController",
+    "Method": "GetAllRoleDetails",
+    "RelativePath": "api/Role",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.RoleController",
+    "Method": "Insert",
+    "RelativePath": "api/Role",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "role",
+        "Type": "EmployeeLibrary.Model.Role",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.RoleController",
+    "Method": "Update",
+    "RelativePath": "api/Role/{roleid}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roleid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "role",
+        "Type": "EmployeeLibrary.Model.Role",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.RoleController",
+    "Method": "Delete",
+    "RelativePath": "api/Role/{roleid}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roleid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.RoleController",
+    "Method": "GetOne",
+    "RelativePath": "api/Role/ByRoleId/{roleid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roleid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.UserController",
+    "Method": "GetAllUserDetails",
+    "RelativePath": "api/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.UserController",
+    "Method": "Insert",
+    "RelativePath": "api/User",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "EmployeeLibrary.Model.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.UserController",
+    "Method": "Update",
+    "RelativePath": "api/User/{userid}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "user",
+        "Type": "EmployeeLibrary.Model.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.UserController",
+    "Method": "Delete",
+    "RelativePath": "api/User/{userid}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.UserController",
+    "Method": "GetByEmail",
+    "RelativePath": "api/User/ByEmail/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.UserController",
+    "Method": "GetOne",
+    "RelativePath": "api/User/ByUserId/{userid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.UserRoleController",
+    "Method": "GetAllUserRoleDetails",
+    "RelativePath": "api/UserRole",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.UserRoleController",
+    "Method": "Insert",
+    "RelativePath": "api/UserRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userrole",
+        "Type": "EmployeeLibrary.Model.UserRole",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.UserRoleController",
+    "Method": "Update",
+    "RelativePath": "api/UserRole/{userroleid}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userroleid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "userrole",
+        "Type": "EmployeeLibrary.Model.UserRole",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.UserRoleController",
+    "Method": "Delete",
+    "RelativePath": "api/UserRole/{userroleid}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userroleid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.UserRoleController",
+    "Method": "GetByRole",
+    "RelativePath": "api/UserRole/ByRoleId/{roleid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roleid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.UserRoleController",
+    "Method": "GetByUser",
+    "RelativePath": "api/UserRole/ByUserId/{userid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeManagementSystemWebApi.Controllers.UserRoleController",
+    "Method": "GetOne",
+    "RelativePath": "api/UserRole/ByUserRoleId/{userroleid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userroleid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

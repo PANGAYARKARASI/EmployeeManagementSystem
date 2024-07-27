@@ -1,0 +1,116 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    <style>
+       
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            gap: 10px;
+        }
+
+        .second-row {
+            grid-column-start: 2;
+            padding-left:15%;
+            height:200px;
+            width:1400px;
+            gap: 20px;
+           
+        }
+        .card {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+        }
+        .user {
+            background-image: url("../Images/user2.jpg");
+        }
+        .role {
+            background-image: url("../Images/role3-transformed.jpeg");
+        }
+
+        .userrole {
+            background-image: url("../Images/userrole3.png");
+        }
+
+        .attendance {
+            background-image: url("../Images/attendance2.jpg");
+        }
+
+        .payroll {
+            background-image: url("../Images/payroll1-transformed.jpeg");
+        }
+
+        .card div {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+       
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light " style="width: 100%; margin-left: 0; margin-right: 0;">
+            <div class="container-fluid" style="background-color:darkcyan; padding-left: 0; padding-right: 0;">
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">Employee Management System</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+
+
+                        </li>
+                    </ul>
+                    <a href="@Url.Action("Logout", "User")" class="nav-link text-white">Log Out</a> <!-- Updated button style to Bootstrap's primary color -->
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <br />
+    <div class="grid-container">
+        <a  asp-area="" asp-controller="User" asp-action="Index">
+            <div class="card user">
+                <div style="text-align: center; color: black;padding-left:3%;padding-bottom:55%">USER</div>
+            </div>
+        </a>
+        <a  asp-area="" asp-controller="Role" asp-action="Index">
+            <div class="card role">
+                <div style="text-align: center;color: white;padding-left:3%;padding-bottom:55%">ROLE</div>
+            </div>
+        </a>
+        <a  asp-area="" asp-controller="UserRole" asp-action="Index">
+            <div class="card userrole">
+                <div style="color: black;padding-left:30%;padding-bottom:55%">USERROLE</div>
+            </div>
+        </a>
+        </div>
+        <br />
+    <div class="grid-container second-row">
+        <a  asp-area="" asp-controller="Attendance" asp-action="Index">
+            <div class="card attendance">
+                <div style="text-align:center ;color: black;padding-left:5%;padding-bottom:43%">ATTENDANCE</div>
+            </div>
+        </a>
+        
+        <a  asp-area="" asp-controller="Payroll" asp-action="Index">
+            <div class="card payroll">
+                <div style="text-align: center;color: black;padding-left:2%;padding-bottom:43%">PAYROLL</div>
+            </div>
+        </a>
+    </div>
+</body>

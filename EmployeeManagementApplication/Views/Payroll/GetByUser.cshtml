@@ -1,0 +1,69 @@
+﻿@model IEnumerable<EmployeeLibrary.Model.Payroll>
+
+@{
+    ViewData["Title"] = "GetByUser";
+}
+<br />
+<h1>Payroll</h1>
+@if(Model.Any())
+{
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserRole.User.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserRole.User.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserRole.Role.RoleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserRole.User.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserRole.User.FirstName)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserRole.User.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserRole.Role.RoleName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserRole.User.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+
+        </tr>
+}
+    </tbody>
+    </table>
+}
+else
+{
+    <br />
+    <div style="font-size:40px"> No Records Found</div>
+}
+<div>
+    <a class="btn btn-primary me-2" asp-area="" asp-controller="HomeIndexUser" asp-action="Index">Back to Index</a>
+</div>

@@ -1,0 +1,51 @@
+﻿@model EmployeeLibrary.Model.Payroll
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<br />
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Payroll</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PayrollId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PayrollId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UserRole.User.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserRole.User.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserRole.User.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserRole.User.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserRole.Role.RoleName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserRole.Role.RoleName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a class="btn btn-primary me-2" asp-area="" asp-action="Index">Back to Index</a>
+
+    </form>
+</div>

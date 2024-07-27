@@ -1,0 +1,95 @@
+﻿@model IEnumerable<EmployeeLibrary.Model.Attendance>
+
+@{
+    ViewData["Title"] = "GetByUser";
+}
+<br />
+<h1>Attendance</h1>
+
+    @{
+        var SuccessCheckIn = TempData["SuccessCheckIn"] as bool?;
+        var SuccessCheckOut = TempData["SuccessCheckOut"] as bool?;
+    }
+<p>
+    @if (SuccessCheckIn.HasValue && SuccessCheckIn.Value)
+    {
+        <a class="btn btn-primary me-2" asp-area="" asp-action="CheckOut" asp-controller="Attendance">CheckOut</a>
+
+    }
+    else
+    {
+        <a class="btn btn-primary me-2" asp-area="" asp-action="CheckIn" asp-controller="Attendance">CheckIn</a>
+
+    }
+</p>
+@if(Model.Any())
+{
+<table class="table">
+    <thead>
+        <tr>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.User.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckOut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkingHours)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.LastName)
+                </td>
+                
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkingHours)
+            </td>
+         
+        </tr>
+}
+    </tbody>
+</table>
+}
+else
+{
+    <br />
+    <div style="font-size:40px"> No Records Found</div>
+}
+<div>
+    <a class="btn btn-primary me-2" asp-area="" asp-controller="HomeIndexUser" asp-action="Index">Back to Index</a>
+</div>
+

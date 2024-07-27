@@ -1,0 +1,75 @@
+﻿@model EmployeeLibrary.Model.Attendance
+@using EmployeeLibrary.Model
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Attendance</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                @{
+                    var users = ViewData["userid"] as List<User>;
+                }
+                <select asp-for="UserId" class="form-control" required>
+                    <option value="" disabled selected>Select a User</option>
+                    @foreach (var i in users)
+                    {
+                        <option value="@i.UserId">@i.FirstName @i.LastName</option>
+
+                    }
+                </select>
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" required />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" class="form-control" required>
+
+                    <option value="">Select Status Type</option>
+
+                    <option value="present">Present</option>
+
+                    <option value="partially present">Partially Present</option>
+
+                    <option value="absent">Absent</option>
+
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="CheckIn" class="control-label"></label>
+                <input asp-for="CheckIn" class="form-control" required />
+                <span asp-validation-for="CheckIn" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="CheckOut" class="control-label"></label>
+                <input asp-for="CheckOut" class="form-control" required />
+                <span asp-validation-for="CheckOut" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a class="btn btn-primary me-2" asp-area="" asp-action="Index">Back to Index</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+

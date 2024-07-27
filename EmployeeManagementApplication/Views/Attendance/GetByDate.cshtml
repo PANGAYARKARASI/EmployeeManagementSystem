@@ -1,0 +1,82 @@
+﻿@model IEnumerable<EmployeeLibrary.Model.Attendance>
+
+@{
+    ViewData["Title"] = "GetByDate";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/site.css"   />
+</head>
+<br />
+<h1>Get By Date</h1>
+@if(Model.Any())
+{
+
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.User.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckOut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkingHours)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.User.FirstName)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.LastName)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkingHours)
+            </td>
+             
+        </tr>
+}
+    </tbody>
+</table>
+}
+else
+{
+    <br />
+    <div style="font-size:40px"> No Records Found</div>
+}
+<br />
+<div>
+    <a class="btn btn-primary me-2" asp-area="" asp-action="Index">Back to Index</a>
+</div>
+
